@@ -1,0 +1,165 @@
+#snake-game {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.snake-game__zone-wrapper {
+    border: 1px solid #ccc;
+    display: table;
+}
+
+.snake-game__board {
+    padding: 0 20px;
+}
+
+.snake-game__play-btn {
+    padding: 20px;
+    max-width: 250px;
+    width: 250px;
+    text-align: center;
+    background-color: rgb(178, 121, 224);
+    color: #fff;
+    font-weight: bold;
+    margin: 20px 0;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+
+.snake-game__message {
+    padding: 20px;
+    color: rgb(178, 121, 224);
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.snake-game__tr {
+    display: flex;
+}
+
+.snake-game__td {
+    width: 20px;
+    height: 20px;
+    border: 1px solid #ccc;
+}
+
+.snake-game__chain {
+    background-color: cornflowerblue;
+    border: 1px solid cornflowerblue;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+
+.snake-game__food-cherry {
+    background: url('../images/food.gif') no-repeat center center;
+    background-size: cover;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+
+.snake-game__food-cut {
+    background: url('../images/cut.gif') no-repeat center center;
+    background-size: cover;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; } /* Элемент виден */
+    50% { opacity: 0.5; } /* Элемент мерцает и становится невидимым */
+}
+
+.snake-game__food-blink { 
+    animation: blink 0.2s step-end infinite;
+}
+  
+
+.snake-game__chain {
+    background: url('../images/snake-chain.jpg') center center;
+    background-size: auto;
+    background-color: transparent;
+    border: 1px solid #35a517;
+    background-repeat: repeat-y;
+}
+
+.snake-game__chain-head {
+    background: url('../images/head.png') no-repeat center center !important;
+    background-size: cover;
+    background-color: transparent;
+    border: 1px solid #35a517;
+    border-top-color: #ccc;
+    position: relative;
+}
+
+.snake-game__chain-end {
+    background: url('../images/snake-end.png') no-repeat center center;
+    background-size: cover;
+    background-color: transparent;
+    border: 1px solid #ccc;
+    border-top-color: #35a517;
+    position: relative;
+}
+
+.snake-game__chain-end::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 12px;
+    left: -1px;
+    top: -1px;
+    background-color: #35a517;
+}
+
+.snake-game__chain-end::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 12px;
+    right: -1px;
+    top: -1px;
+    background-color: #35a517;
+}
+
+.snake-game__chain-head::after {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 10px;
+    left: -1px;
+    background-color: #ccc;
+}
+
+.snake-game__chain-head::before {
+    content: '';
+    position: absolute;
+    width: 1px;
+    height: 10px;
+    right: -1px;
+    background-color: #ccc;
+}
+
+.snake-game__chain-right {
+    transform: rotate(90deg);
+}
+
+.snake-game__chain-down {
+    transform: rotate(180deg);
+}
+
+.snake-game__chain-left {
+    transform: rotate(-90deg);
+}
+
+.snake-game__tr:nth-child(even) .snake-game__td:nth-child(odd) {
+    background-color: #deedda;
+}
+
+.snake-game__tr:nth-child(odd) .snake-game__td:nth-child(even) {
+    background-color: #f2e9f9;
+}
+
+/*.snake-game__td:nth-child(even) {
+    background-color: #deedda;
+}
+
+.snake-game__td:nth-child(odd) {
+    background-color: #f2e9f9;
+}*/
