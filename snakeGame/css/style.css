@@ -65,8 +65,8 @@
 }
 
 @keyframes blink {
-    0%, 100% { opacity: 1; } /* Элемент виден */
-    50% { opacity: 0.5; } /* Элемент мерцает и становится невидимым */
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
 }
 
 .snake-game__food-blink { 
@@ -158,10 +158,76 @@
     background-color: #f2e9f9;
 }
 
-/*.snake-game__td:nth-child(even) {
-    background-color: #deedda;
+.btn-wrapper {
+    display: none;
+    margin-bottom: 20px;
 }
 
-.snake-game__td:nth-child(odd) {
-    background-color: #f2e9f9;
-}*/
+.snake-game__control {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ccc;
+    box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2);
+}
+
+.btn-wrapper__inner-middle {
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn-wrapper__inner-top, .btn-wrapper__inner-bottom {
+    display: flex;
+    justify-content: center;
+}
+
+.snake-game__control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(178, 121, 224);
+}
+
+.snake-game__control::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    display: block;
+}
+
+.snake-game__left-btn::after {
+    border-width: 5px 10px 5px 0;
+    border-color: transparent #fff transparent transparent;
+}
+
+.snake-game__right-btn::after {
+    border-width: 5px 0 5px 10px;
+    border-color: transparent transparent transparent #fff;
+}
+
+.snake-game__up-btn::after {
+    border-width: 0 5px 10px 5px;
+    border-color: transparent transparent #fff transparent;
+}
+
+.snake-game__down-btn::after {
+    border-width: 10px 5px 0 5px;
+    border-color: #fff transparent transparent transparent;
+}
+
+@media (max-width: 991px) {
+    .btn-wrapper {
+        display: block;
+    }
+
+    #snake-game {
+        display: table;
+        margin: 0 auto;
+    }
+
+    .snake-game__message {
+        padding: 8px;
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+}
